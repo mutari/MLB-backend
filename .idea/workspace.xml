@@ -11,19 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60095b89-cf49-4aae-9f01-55061a770c5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Song.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SongRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/api/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a8628ec-c056-4444-b6eb-36df65b4a6c9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a8628ec-c056-4444-b6eb-36df65b4a6c9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony-MLB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony-MLB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SongRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SongRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +138,27 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/amphp/sync" />
+      <path value="$PROJECT_DIR$/vendor/amphp/windows-registry" />
+      <path value="$PROJECT_DIR$/vendor/amphp/serialization" />
+      <path value="$PROJECT_DIR$/vendor/amphp/socket" />
+      <path value="$PROJECT_DIR$/vendor/amphp/parser" />
+      <path value="$PROJECT_DIR$/vendor/amphp/process" />
+      <path value="$PROJECT_DIR$/vendor/amphp/http" />
+      <path value="$PROJECT_DIR$/vendor/amphp/http-client" />
+      <path value="$PROJECT_DIR$/vendor/amphp/dns" />
+      <path value="$PROJECT_DIR$/vendor/amphp/hpack" />
+      <path value="$PROJECT_DIR$/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/vendor/amphp/cache" />
+      <path value="$PROJECT_DIR$/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/vendor/daverandom/libdns" />
+      <path value="$PROJECT_DIR$/vendor/kelunik/certificate" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-parser" />
+      <path value="$PROJECT_DIR$/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1l0jEdKI7zYRPCHvD4BNfL8WlWT" />
@@ -165,6 +184,8 @@
       <workItem from="1606740792553" duration="379000" />
       <workItem from="1606813040015" duration="431000" />
       <workItem from="1606816543515" duration="6123000" />
+      <workItem from="1606895593382" duration="8450000" />
+      <workItem from="1606985030408" duration="7382000" />
     </task>
     <servers />
   </component>
@@ -188,10 +209,10 @@
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
     <state x="2352" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/1920.0.1680.1020/-1050.-610.1050.1650@1920.0.1680.1020" timestamp="1606741170782" />
-    <state x="2540" y="265" key="FileChooserDialogImpl" timestamp="1606813470061">
+    <state x="2540" y="265" key="FileChooserDialogImpl" timestamp="1606902793737">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
-    <state x="2540" y="265" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1680.1020/-1050.-610.1050.1650@1920.0.1680.1020" timestamp="1606813470061" />
+    <state x="2540" y="265" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1680.1020/-1050.-610.1050.1650@1920.0.1680.1020" timestamp="1606902793737" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1606741005868">
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
@@ -200,5 +221,9 @@
       <screen x="1920" y="0" width="1680" height="1020" />
     </state>
     <state x="2659" y="387" width="467" height="315" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.834/1920.0.1680.1020/-1050.-610.1050.1650@1920.0.1680.1020" timestamp="1606741055320" />
+    <state x="2423" y="220" width="672" height="678" key="search.everywhere.popup" timestamp="1606987474587">
+      <screen x="1920" y="0" width="1680" height="1020" />
+    </state>
+    <state x="2423" y="220" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/1920.0.1680.1020/-1050.-610.1050.1650@1920.0.1680.1020" timestamp="1606987474587" />
   </component>
 </project>

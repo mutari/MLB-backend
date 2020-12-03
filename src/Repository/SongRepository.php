@@ -19,6 +19,12 @@ class SongRepository extends ServiceEntityRepository
         parent::__construct($registry, Song::class);
     }
 
+    public function findAllAsArray() {
+        return $this->createQueryBuilder('s')
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+    }
+
     // /**
     //  * @return Song[] Returns an array of Song objects
     //  */

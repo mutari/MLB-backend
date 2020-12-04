@@ -48,11 +48,20 @@ class ApiController extends AbstractController
             $logger->info('upploding file'.$file->getType());
 
             //if file is a image
-            if(0 === strpos($file->getType(), 'file')) {
+            if(1 === strpos($file->getType(), 'file')) {
                 $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
                 $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$file->guessExtension();
                 $file->move($destination, $newFilename);
+            } else {
+                $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.jpg';
+                $imagick = new \Imagick();
+
+                $imagick->readImage($file);
+
+                $imagick->writeImages($destination.'/'.$newFilename);
             }
 
             //save to db
@@ -76,15 +85,8 @@ class ApiController extends AbstractController
             return $response;
         }
 
-        /*
         $response->setContent(json_encode([
-            'error' => 'could not find eny data'
-        ]));
-*/
-        $response->setContent(json_encode([
-            'post' => $request->getContent(),
-            'file' => $_FILES,
-            'type' => $request->headers->get('Content-Type')
+            'error' => 'somthig whent wrong'
         ]));
         return $response;
     }

@@ -10,7 +10,12 @@ require dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 
 // allow multipal origin addresses
-$http_origin = $_SERVER['HTTP_ORIGIN'];
+if(isset($_SERVER['HTTP_ORIGIN']))
+    $http_origin = $_SERVER['HTTP_ORIGIN'];
+else if(isset($_SERVER['HTTP_REFERER']))
+    $http_origin = $_SERVER['HTTP_REFERER'];
+else
+    $http_origin = "http://104.248.164.29/";
 
 if ($http_origin == "http://localhost:5000" || $http_origin == "http://104.248.164.29/")
 {

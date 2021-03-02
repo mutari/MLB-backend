@@ -214,7 +214,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/testNoLogin", name="test")
+     * @Route("/testNoLogin", name="testNL")
      */
     public function testNoLogin() {
         return new Response(json_encode([

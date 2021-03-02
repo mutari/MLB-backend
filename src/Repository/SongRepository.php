@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Song;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -21,6 +22,14 @@ class SongRepository extends ServiceEntityRepository
 
     public function findAllAsArray() {
         return $this->createQueryBuilder('s')
+            ->getQuery()
+            ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+    }
+
+    public function findAllAsArrayUser(User $user) {
+        return $this->createQueryBuilder('s')
+            ->where('s.User = :user')
+            ->setParameter('user', $user)
             ->getQuery()
             ->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
     }

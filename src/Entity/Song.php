@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SongRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,27 @@ class Song
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $mp3_path;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="songs")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $User;
+
+    /**
+     * @ORM\OneToMany(targetEntity=PlayListSong::class, mappedBy="Song")
+     */
+    private $playListSongs;
+
+    public function __construct()
+    {
+        $this->playListSongs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +92,60 @@ class Song
     public function setTitle(?string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getMp3Path(): ?string
+    {
+        return $this->mp3_path;
+    }
+
+    public function setMp3Path(?string $mp3_path): self
+    {
+        $this->mp3_path = $mp3_path;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): self
+    {
+        $this->User = $User;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|PlayListSong[]
+     */
+    public function getPlayListSongs(): Collection
+    {
+        return $this->playListSongs;
+    }
+
+    public function addPlayListSong(PlayListSong $playListSong): self
+    {
+        if (!$this->playListSongs->contains($playListSong)) {
+            $this->playListSongs[] = $playListSong;
+            $playListSong->setSong($this);
+        }
+
+        return $this;
+    }
+
+    public function removePlayListSong(PlayListSong $playListSong): self
+    {
+        if ($this->playListSongs->removeElement($playListSong)) {
+            // set the owning side to null (unless already changed)
+            if ($playListSong->getSong() === $this) {
+                $playListSong->setSong(null);
+            }
+        }
 
         return $this;
     }

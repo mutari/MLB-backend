@@ -17,3 +17,5 @@
 
 .idea
 /public/uploads
+
+.env

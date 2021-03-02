@@ -214,6 +214,16 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/testNoLogin", name="test")
+     */
+    public function test() {
+        return new Response(json_encode([
+            "response" => "this was a sucess",
+            "status" => 69420
+        ]));
+    }
+
+    /**
      * @Route("/test", name="test")
      */
     public function test() {

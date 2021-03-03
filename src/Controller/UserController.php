@@ -3,7 +3,6 @@
 // src/Controller/SecurityController.php
 namespace App\Controller;
 
-use Doctrine\ORM\EntityManager;
 use Emarref\Jwt\Claim;
 use Emarref\Jwt\Token;
 use Emarref\Jwt\Jwt;
@@ -14,17 +13,14 @@ use Emarref\Jwt\Exception\VerificationException;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Exception;
-use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class UserController extends AbstractController
@@ -106,11 +102,14 @@ class UserController extends AbstractController
 
             $mailer->send($email);
 
+            dump('test');
+
             return new Response(json_encode([
                 "response" => "Email sent",
                 "status" => 200
             ]));
         } catch (\Exception $e) {
+            dump($e);
             return new Response(json_encode([
                 "response" => $e->getMessage(),
                 "status" => 404
